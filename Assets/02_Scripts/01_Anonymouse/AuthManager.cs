@@ -48,7 +48,14 @@ public class AuthManager : MonoBehaviour
             Debug.Log("로그 아웃");
         };
 
+        // 로그인 실패
+        Auth.Instance.SignInFailed += (e) =>
+        {
+            Debug.Log($"로그인 실패 : {e.Message}");
+        };
 
+        // 세션 종료시 호출되는 콜백
+        Auth.Instance.Expired += () => Debug.Log("세션 종료");
     }
 
     // 익명 로그인 로직
