@@ -41,6 +41,14 @@ public class AuthManager : MonoBehaviour
             Debug.Log("익명 로그인 성공");
             Debug.Log($"Player Id: {Auth.Instance.PlayerId}");
         };
+
+        // 익명 로그인 로그아웃 콜백
+        Auth.Instance.SignedOut += () =>
+        {
+            Debug.Log("로그 아웃");
+        };
+
+
     }
 
     // 익명 로그인 로직
