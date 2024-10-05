@@ -27,11 +27,14 @@ public class AuthManager : MonoBehaviour
 
     private void BindingUIEvents()
     {
-        // 버튼 클릭 이벤트 연결
+        // 로그인 버튼 클릭 이벤트 연결
         signInButton.onClick.AddListener(async () =>
         {
             await SignInAsync();
         });
+
+        // 로그아웃 버튼 클릭 이벤트 연결
+        signOutButton.onClick.AddListener(() => Auth.Instance.SignOut());
     }
 
     private void BingingEvents()
