@@ -16,13 +16,18 @@ public class AuthManager : MonoBehaviour
             Debug.Log("UGS 초기화 완료");
         };
 
+        AuthenticationService.Instance.SignedIn += () =>
+        {
+            Debug.Log("익명 로그인 성공");
+        };
+
         // Unity Gaming Service 초기화
         await UnityServices.InitializeAsync();
 
         // 버튼 클릭 이벤트 연결
-        signInButton.onClick.AddListener(() =>
+        signInButton.onClick.AddListener(async () =>
         {
-
+            await SignInAsync();
         });
     }
 
@@ -31,7 +36,7 @@ public class AuthManager : MonoBehaviour
     {
         try
         {
-            // 로직
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
         catch (AuthenticationException e)
         {
