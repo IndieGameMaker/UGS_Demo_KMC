@@ -58,7 +58,26 @@ public class AuthManager : MonoBehaviour
         #endregion
 
         #region UserName & Password 바인딩
-
+        // 회원가입 이벤트 연결
+        signUpUserNameButton.onClick.AddListener(async () =>
+        {
+            /*
+                UserName  : 대소문자 구별 없다. 3~20자, [. - @] 가능
+                Password  : 대소문자 구별 함. 8~30자, 영문자 대문자 1, 소문자 1, 숫자 1, 특수문자 1
+            */
+            try
+            {
+                await Auth.Instance.SignUpWithUsernamePasswordAsync(userNameIF.text, passwordIF.text);
+            }
+            catch (AuthenticationException e)
+            {
+                Debug.LogError("Auth Error :" + e.Message);
+            }
+            catch (RequestFailedException e)
+            {
+                Debug.LogError("Request Error :" + e.Message);
+            }
+        });
         #endregion
     }
 
@@ -87,6 +106,11 @@ public class AuthManager : MonoBehaviour
 
         // 세션 종료시 호출되는 콜백
         Auth.Instance.Expired += () => Debug.Log("세션 종료");
+
+        #region UserName & Password Callbacks
+        // 회원가입 성공시 호출되는 콜백
+
+        #endregion
     }
 
     // 익명 로그인 로직
