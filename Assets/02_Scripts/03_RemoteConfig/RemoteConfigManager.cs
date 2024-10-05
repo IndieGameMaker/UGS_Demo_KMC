@@ -1,16 +1,17 @@
+using Unity.Services.Authentication;
+using Unity.Services.Core;
 using UnityEngine;
 
 public class RemoteConfigManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private async void Awake()
     {
+        await UnityServices.InitializeAsync();
 
+        await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    // 데이터 로딩
+    private struct userAttributes { };
 
-    }
 }
