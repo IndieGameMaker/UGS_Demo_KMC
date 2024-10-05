@@ -54,8 +54,10 @@ public class AuthManager : MonoBehaviour
         // 익명 로그인 완료됐을 때 호출되는 콜백 연결
         AuthenticationService.Instance.SignedIn += () =>
         {
+            // Zack#3855
             Debug.Log("익명 로그인 성공");
             Debug.Log($"Player Id: {Auth.Instance.PlayerId}");
+            Debug.Log($"Player Name: {Auth.Instance.PlayerName?.Split('#')[0]}");
         };
 
         // 익명 로그인 로그아웃 콜백
