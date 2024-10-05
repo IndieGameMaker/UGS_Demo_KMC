@@ -39,6 +39,7 @@ public class AuthManager : MonoBehaviour
         AuthenticationService.Instance.SignedIn += () =>
         {
             Debug.Log("익명 로그인 성공");
+            Debug.Log($"Player Id: {Auth.Instance.PlayerId}");
         };
     }
 
