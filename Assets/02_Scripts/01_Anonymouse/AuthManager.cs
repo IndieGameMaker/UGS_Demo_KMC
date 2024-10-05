@@ -8,6 +8,7 @@ using Auth = Unity.Services.Authentication.AuthenticationService;
 public class AuthManager : MonoBehaviour
 {
     [SerializeField] private Button signInButton;
+    [SerializeField] private Button signOutButton;
 
     private async void Awake()
     {
