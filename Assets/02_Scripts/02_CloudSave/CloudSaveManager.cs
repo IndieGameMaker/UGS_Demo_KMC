@@ -28,6 +28,7 @@ public struct ItemData
 public class CloudSaveManager : MonoBehaviour
 {
     public Button singleDataSaveButton;
+    public Button multiDataSaveButton;
 
     public PlayerData playerData;
 
@@ -44,6 +45,10 @@ public class CloudSaveManager : MonoBehaviour
 
         // 싱글 데이터 버튼 이벤트 연결
         singleDataSaveButton.onClick.AddListener(async () => await SaveSingleDataAsync());
+        multiDataSaveButton.onClick.AddListener(async () =>
+        {
+            await SaveMultiDataAsync<PlayerData>("player_data", playerData);
+        });
     }
 
     #region 싱글 데이터 저장
