@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class AuthManager : MonoBehaviour
 {
     [SerializeField] private Button signInButton;
     [SerializeField] private Button signOutButton;
+    [SerializeField] private Button playerNameSaveButton;
+    [SerializeField] private TMP_InputField playerNameIF;
 
     private async void Awake()
     {
