@@ -6,9 +6,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using Auth = Unity.Services.Authentication.AuthenticationService;
 
+[System.Serializable]
+public struct PlayerData
+{
+    public string name;
+    public int level;
+    public int xp;
+    public int gold;
+
+    public List<ItemData> items;
+}
+
+[System.Serializable]
+public struct ItemData
+{
+    public string name;
+    public int count;
+    public string icon;
+}
+
 public class CloudSaveManager : MonoBehaviour
 {
     public Button singleDataSaveButton;
+
+    public PlayerData playerData;
 
     private async void Awake()
     {
