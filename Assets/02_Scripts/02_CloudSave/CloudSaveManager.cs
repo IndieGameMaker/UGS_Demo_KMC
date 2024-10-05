@@ -83,5 +83,34 @@ public class CloudSaveManager : MonoBehaviour
     }
     #endregion
 
+    /*
+        HashSet
+
+        HashSet<int> playerId = new HashSet<int>();
+        playerId.Add(1);
+        playerId.Add(2);
+        playerId.Add(1); 
+    */
+
+    private async Task LoadData()
+    {
+        // 조회하려는 Key 설정
+        var keys = new HashSet<string>
+        {
+            "player_name", "level", "xp", "gold"
+        };
+
+        var data = await CloudSaveService.Instance.Data.Player.LoadAsync(keys);
+
+        if (data.TryGetValue("player_name", out var playerName))
+        {
+            Debug.Log("Player Name :" + playerName.Value.GetAs<string>());
+        }
+        if (data.TryGetValue("level", out var level))
+        {
+            Debug.Log($"Level : {level.Value.GetAs<int>()}");
+        }
+    }
+
 
 }
