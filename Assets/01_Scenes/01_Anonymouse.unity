@@ -471,8 +471,8 @@ MonoBehaviour:
   playerNameIF: {fileID: 1683515566}
   signUpUserNameButton: {fileID: 1819427092}
   signInUserNameButton: {fileID: 793820786}
-  userNameIF: {fileID: 0}
-  passwordIF: {fileID: 0}
+  userNameIF: {fileID: 946135517}
+  passwordIF: {fileID: 323796905}
 --- !u!4 &145602934
 Transform:
   m_ObjectHideFlags: 0
