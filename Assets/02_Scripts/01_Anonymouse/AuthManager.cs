@@ -30,7 +30,7 @@ public class AuthManager : MonoBehaviour
         // 로그인 버튼 클릭 이벤트 연결
         signInButton.onClick.AddListener(async () =>
         {
-            await SignInAsync();
+            if (!Auth.Instance.IsSignedIn) await SignInAsync();
         });
 
         // 로그아웃 버튼 클릭 이벤트 연결
