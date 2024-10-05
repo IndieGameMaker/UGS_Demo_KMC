@@ -469,6 +469,10 @@ MonoBehaviour:
   signOutButton: {fileID: 2116094088}
   playerNameSaveButton: {fileID: 856633487}
   playerNameIF: {fileID: 1683515566}
+  signUpUserNameButton: {fileID: 1819427092}
+  signInUserNameButton: {fileID: 793820786}
+  userNameIF: {fileID: 0}
+  passwordIF: {fileID: 0}
 --- !u!4 &145602934
 Transform:
   m_ObjectHideFlags: 0
