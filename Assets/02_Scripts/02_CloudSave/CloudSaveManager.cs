@@ -66,6 +66,16 @@ public class CloudSaveManager : MonoBehaviour
     #endregion
 
     #region 멀티 데이터 저장
+    private async Task SaveMultiDataAsync<T>(string key, T saveData)
+    {
+        var data = new Dictionary<string, object>
+        {
+            {key, saveData}
+        };
+
+        await CloudSaveService.Instance.Data.Player.SaveAsync(data);
+        Debug.Log("멀티 데이터 저장 완료");
+    }
     #endregion
 
 

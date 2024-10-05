@@ -812,6 +812,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleDataSaveButton: {fileID: 1307283101}
+  playerData:
+    name: Zackiller
+    level: 10
+    xp: 3000
+    gold: 250
+    items:
+    - name: sword
+      count: 2
+      icon: sprite/sword.png
+    - name: axes
+      count: 1
+      icon: sprite/axes.png
+    - name: danger
+      count: 5
+      icon: sprite/danger.png
 --- !u!1 &1307283099
 GameObject:
   m_ObjectHideFlags: 0
