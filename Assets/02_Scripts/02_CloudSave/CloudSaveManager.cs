@@ -55,6 +55,7 @@ public class CloudSaveManager : MonoBehaviour
 
         // 로드 버튼 이벤트 연결
         singleDataLoadButton.onClick.AddListener(async () => await LoadData());
+        multiDataLoadButton.onClick.AddListener(async () => await LoadData<PlayerData>("player_data"));
     }
 
     #region 싱글 데이터 저장
@@ -86,6 +87,9 @@ public class CloudSaveManager : MonoBehaviour
 
         await CloudSaveService.Instance.Data.Player.SaveAsync(data);
         Debug.Log("멀티 데이터 저장 완료");
+
+        // 데이터 삭제
+        playerData = new PlayerData();
     }
     #endregion
 
@@ -118,5 +122,15 @@ public class CloudSaveManager : MonoBehaviour
         }
     }
 
+    // 멀티 데이터 로드
+    private async Task LoadData<T>(string key)
+    {
+        var loadData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { key });
+
+        if (loadData.TryGetValue(key, out var data))
+        {
+            playerData = data.Value.GetAs<PlayerData>();
+        }
+    }
 
 }
