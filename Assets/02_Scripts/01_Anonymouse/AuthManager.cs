@@ -16,13 +16,14 @@ public class AuthManager : MonoBehaviour
             Debug.Log("UGS 초기화 완료");
         };
 
+        // Unity Gaming Service 초기화
+        await UnityServices.InitializeAsync();
+
+        // 익명 로그인 완료됐을 때 호출되는 콜백 연결
         AuthenticationService.Instance.SignedIn += () =>
         {
             Debug.Log("익명 로그인 성공");
         };
-
-        // Unity Gaming Service 초기화
-        await UnityServices.InitializeAsync();
 
         // 버튼 클릭 이벤트 연결
         signInButton.onClick.AddListener(async () =>
