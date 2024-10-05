@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"62f42fe7-e19f-49d3-ba8a-d43ba78e6a8a\"\n   
+    },\n    \"rs\": {\n      \"key\": \"move_speed\",\n      \"type\": \"float\",\n     
+    \"value\": 8.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"85371fd7-d52c-40fd-ae12-e2020ae9384e\"\n   
+    },\n    \"rs\": {\n      \"key\": \"body_scale\",\n      \"type\": \"int\",\n     
+    \"value\": 1\n    }\n  }\n]"
+  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"62f42fe7-e19f-49d3-ba8a-d43ba78e6a8a\"\n   
+    },\n    \"rs\": {\n      \"key\": \"move_speed\",\n      \"type\": \"float\",\n     
+    \"value\": 8.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"85371fd7-d52c-40fd-ae12-e2020ae9384e\"\n   
+    },\n    \"rs\": {\n      \"key\": \"body_scale\",\n      \"type\": \"int\",\n     
+    \"value\": 1\n    }\n  }\n]"
+  _environments: "[\n  {\n    \"projectId\": \"a52e7b28-2ce2-49e2-ac3d-96d0f83aec44\",\n   
+    \"name\": \"production\",\n    \"id\": \"efd493bf-e2bb-4f64-9419-248ba6777dcf\",\n   
+    \"isDefault\": true,\n    \"createdAt\": \"2024-10-05T01:34:37Z\",\n    \"updatedAt\":
+    \"2024-10-05T01:34:37Z\"\n  },\n  {\n    \"projectId\": \"a52e7b28-2ce2-49e2-ac3d-96d0f83aec44\",\n   
+    \"name\": \"development\",\n    \"id\": \"a7b48e65-db7e-4d8f-b157-a95b8a7b46ac\",\n   
+    \"isDefault\": false,\n    \"createdAt\": \"2024-10-05T08:12:33Z\",\n    \"updatedAt\":
+    \"2024-10-05T08:12:33Z\"\n  }\n]"
