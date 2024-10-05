@@ -37,6 +37,7 @@ public class AuthManager : MonoBehaviour
 
     private void BindingUIEvents()
     {
+        #region 익명로그인 바인딩
         // 로그인 버튼 클릭 이벤트 연결
         signInButton.onClick.AddListener(async () =>
         {
@@ -54,6 +55,11 @@ public class AuthManager : MonoBehaviour
 
             Debug.Log($"Player Name : {Auth.Instance.PlayerName}");
         });
+        #endregion
+
+        #region UserName & Password 바인딩
+
+        #endregion
     }
 
     private void BingingEvents()
