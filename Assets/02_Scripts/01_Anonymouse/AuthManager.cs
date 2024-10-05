@@ -78,6 +78,23 @@ public class AuthManager : MonoBehaviour
                 Debug.LogError("Request Error :" + e.Message);
             }
         });
+
+        // UserName & Password 로그인
+        signInUserNameButton.onClick.AddListener(async () =>
+        {
+            try
+            {
+                await Auth.Instance.SignInWithUsernamePasswordAsync(userNameIF.text, passwordIF.text);
+            }
+            catch (AuthenticationException e)
+            {
+                Debug.LogError("Auth Error :" + e.Message);
+            }
+            catch (RequestFailedException e)
+            {
+                Debug.LogError("Request Error :" + e.Message);
+            }
+        });
         #endregion
     }
 
@@ -87,7 +104,7 @@ public class AuthManager : MonoBehaviour
         AuthenticationService.Instance.SignedIn += () =>
         {
             // Zack#3855
-            Debug.Log("익명 로그인 성공");
+            Debug.Log("로그인 성공");
             Debug.Log($"Player Id: {Auth.Instance.PlayerId}");
             Debug.Log($"Player Name: {Auth.Instance.PlayerName?.Split('#')[0]}");
         };
@@ -108,7 +125,6 @@ public class AuthManager : MonoBehaviour
         Auth.Instance.Expired += () => Debug.Log("세션 종료");
 
         #region UserName & Password Callbacks
-        // 회원가입 성공시 호출되는 콜백
 
         #endregion
     }
