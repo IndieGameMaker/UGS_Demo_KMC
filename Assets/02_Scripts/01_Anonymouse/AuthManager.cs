@@ -3,6 +3,7 @@ using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.UI;
+using Auth = Unity.Services.Authentication.AuthenticationService;
 
 public class AuthManager : MonoBehaviour
 {
