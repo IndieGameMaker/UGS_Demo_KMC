@@ -30,6 +30,9 @@ public class CloudSaveManager : MonoBehaviour
     public Button singleDataSaveButton;
     public Button multiDataSaveButton;
 
+    public Button singleDataLoadButton;
+    public Button multiDataLoadButton;
+
     public PlayerData playerData;
 
     private async void Awake()
