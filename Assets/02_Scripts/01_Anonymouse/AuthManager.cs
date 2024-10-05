@@ -8,10 +8,14 @@ using Auth = Unity.Services.Authentication.AuthenticationService;
 
 public class AuthManager : MonoBehaviour
 {
+    [Header("Anonymous UI")]
     [SerializeField] private Button signInButton;
     [SerializeField] private Button signOutButton;
     [SerializeField] private Button playerNameSaveButton;
     [SerializeField] private TMP_InputField playerNameIF;
+
+    [Header("UserName & Password UI")]
+
 
     private async void Awake()
     {
