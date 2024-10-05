@@ -38,6 +38,15 @@ public class AuthManager : MonoBehaviour
 
         // 로그아웃 버튼 클릭 이벤트 연결
         signOutButton.onClick.AddListener(() => Auth.Instance.SignOut());
+
+        // 플레이어 이름 변경 버튼 클릭
+        // 50자, 중간에 공백 허용 X, Zack#1234
+        playerNameSaveButton.onClick.AddListener(async () =>
+        {
+            await Auth.Instance.UpdatePlayerNameAsync(playerNameIF.text);
+
+            Debug.Log($"Player Name : {Auth.Instance.PlayerName}");
+        });
     }
 
     private void BingingEvents()
