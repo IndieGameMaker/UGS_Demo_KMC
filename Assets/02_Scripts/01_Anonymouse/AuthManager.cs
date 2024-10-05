@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,5 +18,24 @@ public class AuthManager : MonoBehaviour
 
         // Unity Gaming Service 초기화
         await UnityServices.InitializeAsync();
+
+        // 버튼 클릭 이벤트 연결
+        signInButton.onClick.AddListener(() =>
+        {
+
+        });
+    }
+
+    // 익명 로그인 로직
+    private async Task SignInAsync()
+    {
+        try
+        {
+            // 로직
+        }
+        catch (AuthenticationException e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 }
