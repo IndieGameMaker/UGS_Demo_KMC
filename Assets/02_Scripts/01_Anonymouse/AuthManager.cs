@@ -15,7 +15,10 @@ public class AuthManager : MonoBehaviour
     [SerializeField] private TMP_InputField playerNameIF;
 
     [Header("UserName & Password UI")]
-
+    [SerializeField] private Button signUpUserNameButton;
+    [SerializeField] private Button signInUserNameButton;
+    [SerializeField] private InputField userNameIF;
+    [SerializeField] private InputField passwordIF;
 
     private async void Awake()
     {
