@@ -46,12 +46,15 @@ public class CloudSaveManager : MonoBehaviour
         // 익명 로그인
         await Auth.Instance.SignInAnonymouslyAsync();
 
-        // 싱글 데이터 버튼 이벤트 연결
+        // 저장 버튼 이벤트 연결
         singleDataSaveButton.onClick.AddListener(async () => await SaveSingleDataAsync());
         multiDataSaveButton.onClick.AddListener(async () =>
         {
             await SaveMultiDataAsync<PlayerData>("player_data", playerData);
         });
+
+        // 로드 버튼 이벤트 연결
+        singleDataLoadButton.onClick.AddListener(async () => await LoadData());
     }
 
     #region 싱글 데이터 저장
